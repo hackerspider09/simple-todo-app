@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  namespace: todo-app
+spec:
+  # type: NodePort   # Temporary for testing; will switch to ClusterIP when we add Ingress
+  selector:
+    app: frontend
+  ports:
+    - port: 80
+      targetPort: 80
+      # nodePort: 30080
